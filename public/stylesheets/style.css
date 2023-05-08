@@ -1,8 +1,39 @@
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  background-color: darkred;
+  color: white;
+  margin: 0;
 }
 
 a {
-  color: #00b7ff;
+  text-decoration: none;
+  color: whitesmoke;
+}
+a:hover {
+  color: lightgreen;
+}
+
+nav {
+  background-color: rgb(76, 40, 40);
+  height: 70px;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30px;
+  gap: 20px;
+}
+
+#card {
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+}
+
+.title-h2 {
+  text-align: center;
+  font-size: 38px;
 }
