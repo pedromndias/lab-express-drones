@@ -10,7 +10,7 @@ router.get('/drones', (req, res, next) => {
   // ... your code here
   Drone.find()
   .then((allDrones) => {
-    console.log(allDrones)
+    // console.log(allDrones)
     res.render("drones/list.hbs", {
       allDrones
     })
@@ -23,12 +23,25 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render("drones/create-form")
 });
 
 router.post('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  const {name, propellers, maxSpeed} = req.body;
+  Drone.create({
+    name,
+    propellers,
+    maxSpeed
+  })
+  .then(()=> {
+    console.log("Drones added", req.body)
+    res.redirect("/drones")
+  })
+  .catch((err) => {
+    next(err)
+  })
+  
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
